@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 31, 2023 at 10:30 PM
+-- Generation Time: Aug 31, 2023 at 11:01 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -92,7 +92,7 @@ CREATE TABLE `employee` (
 INSERT INTO `employee` (`EMPLOYEE_ID`, `FIRST_NAME`, `LAST_NAME`, `GENDER`, `EMAIL`, `PHONE_NUMBER`, `JOB_ID`, `HIRED_DATE`, `LOCATION_ID`) VALUES
 (1, 'Admin', 'User', 'Male', 'name@gmail.com', '0123456789', 1, '0000-00-00', 113),
 (2, 'Joram', 'Okwir', 'Male', 'joraml.com', '09091245761', 2, '2019-01-28', 156),
-(4, 'Ampiire', 'Ashilla', 'Female', 'ashilla@gmail.com', '09123357105', 1, '2023-03-06', 158);
+(4, 'Ampiire', 'Ashilla', 'Female', 'ashilla@gmail.com', '09123357105', 3, '2023-03-06', 158);
 
 -- --------------------------------------------------------
 
@@ -187,7 +187,7 @@ CREATE TABLE `manager` (
 --
 
 INSERT INTO `manager` (`FIRST_NAME`, `LAST_NAME`, `LOCATION_ID`, `EMAIL`, `PHONE_NUMBER`) VALUES
-('Phyllis', 'Alinda', 113, 'phyllis@gmail.com', '0123456789');
+('System', 'Admin', 113, 'phyllis@gmail.com', '0123456789');
 
 -- --------------------------------------------------------
 
@@ -345,8 +345,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`ID`, `EMPLOYEE_ID`, `USERNAME`, `PASSWORD`, `TYPE_ID`) VALUES
 (1, 1, 'admin', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1),
-(7, 2, 'ashilla', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 2),
-(9, 4, 'joram', '8cb2237d0679ca88db6464eac60da96345513964', 2);
+(7, 2, 'madmin', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 3),
+(9, 4, 'user', 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', 2);
 
 --
 -- Indexes for dumped tables

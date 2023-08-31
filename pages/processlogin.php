@@ -59,7 +59,7 @@ if (isset($_POST['btnlogin'])) {
         ?> <script type="text/javascript">
             //then it will be redirected to index.php
             alert("<?php echo  $_SESSION['FIRST_NAME']; ?> Welcome!");
-            window.location = "pos.php";
+            window.location = "user_product.php";
           </script>
         <?php
 
@@ -70,7 +70,7 @@ if (isset($_POST['btnlogin'])) {
         ?> <script type="text/javascript">
             //then it will be redirected to index.php
             alert("<?php echo  $_SESSION['FIRST_NAME']; ?> Welcome!");
-            window.location = "index.php";
+            window.location = "middle_product.php";
           </script>
         <?php
 
