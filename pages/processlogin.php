@@ -64,6 +64,17 @@ if (isset($_POST['btnlogin'])) {
         <?php
 
         }
+
+        elseif ($_SESSION['TYPE'] == 'middle') {
+
+        ?> <script type="text/javascript">
+            //then it will be redirected to index.php
+            alert("<?php echo  $_SESSION['FIRST_NAME']; ?> Welcome!");
+            window.location = "index.php";
+          </script>
+        <?php
+
+        }
       } else {
         //IF theres no result
         ?>
