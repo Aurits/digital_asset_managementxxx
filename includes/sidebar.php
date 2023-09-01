@@ -92,13 +92,13 @@
 	     <li class="nav-item">
         <a class="nav-link" href="employee.php">
           <i class="fas fa-fw fa-user"></i>
-          <span>Manage Admin</span></a>
+          <span>Manage Staff</span></a>
       </li>
 	  
       <li class="nav-item">
         <a class="nav-link" href="customer.php">
           <i class="fas fa-fw fa-user"></i>
-          <span>Manage Users</span></a>
+          <span>Manage Students</span></a>
       </li>
 
       <li class="nav-item">

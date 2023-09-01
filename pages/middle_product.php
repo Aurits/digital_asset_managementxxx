@@ -57,7 +57,7 @@ $sup .= "</select>";
             <th>Asset Code</th>
             <th>Name</th>
             <th>Description</th>
-            <th>Quantity</th>
+            <!-- <th>Quantity</th> -->
             <th>Category</th>
             <th>Departmet</th>
             <th>Upload</th>
@@ -84,7 +84,7 @@ $sup .= "</select>";
             echo '<td>' . $row['PRODUCT_ID'] . '</td>';
             echo '<td>' . $row['NAME'] . '</td>';
             echo '<td>' . $row['DESCRIPTION'] . '</td>';
-            echo '<td>' . $row['QTY_STOCK'] . '</td>';
+            // echo '<td>' . $row['QTY_STOCK'] . '</td>';
             echo '<td>' . $row['CNAME'] . '</td>';
             echo '<td>' . $row['COMPANY_NAME'] . '</td>';
             echo '<td>' . $row['UPLOADNAME'] . '</td>';

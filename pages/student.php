@@ -28,42 +28,51 @@ while ($row = mysqli_fetch_assoc($result)) {
   </div>
   <div class="card-body">
     <div class="table-responsive">
-      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-        <thead>
-          <tr>
-            <th>Asset Code</th>
-            <th>Name</th>
-            <th>Quantity</th>
-            <th>On Hand</th>
-            <th>Category</th>
-            <th>Date Stock In</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Asset Code</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Department</th>
+      <th>Upload</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
 
           <?php
-          $query = 'SELECT PRODUCT_ID, PRODUCT_CODE, NAME, COUNT(`QTY_STOCK`) AS "QTY_STOCK", COUNT(`ON_HAND`) AS "ON_HAND", CNAME, DATE_STOCK_IN FROM product p join category c on p.CATEGORY_ID=c.CATEGORY_ID GROUP BY PRODUCT_CODE';
+          error_reporting(E_ALL);
+          ini_set('display_errors', 1);
+
+          $query = 'SELECT product.PRODUCT_ID, product.UPLOADNAME
+    , product.CATEGORY_ID, product.PRODUCT_CODE, product.NAME, product.PRICE, category.CNAME, supplier.COMPANY_NAME, product.QTY_STOCK, product.DATE_STOCK_IN, product.DESCRIPTION, product.ON_HAND, product.SUPPLIER_ID
+              FROM product
+              JOIN category ON product.CATEGORY_ID = category.CATEGORY_ID
+              JOIN supplier on product.SUPPLIER_ID = supplier.SUPPLIER_ID
+              GROUP BY PRODUCT_CODE';
           $result = mysqli_query($db, $query) or die(mysqli_error($db));
 
           while ($row = mysqli_fetch_assoc($result)) {
 
             echo '<tr>';
-            echo '<td>' . $row['PRODUCT_CODE'] . '</td>';
+            echo '<td>' . $row['PRODUCT_ID'] . '</td>';
             echo '<td>' . $row['NAME'] . '</td>';
-            echo '<td>' . $row['QTY_STOCK'] . '</td>';
-            echo '<td>' . $row['ON_HAND'] . '</td>';
+            echo '<td>' . $row['DESCRIPTION'] . '</td>';
+            // echo '<td>' . $row['QTY_STOCK'] . '</td>';
             echo '<td>' . $row['CNAME'] . '</td>';
-            echo '<td>' . $row['DATE_STOCK_IN'] . '</td>';
-            echo '<td align="right">
-                              <a type="button" class="btn btn-primary bg-gradient-primary" href="inv_searchfrm.php?action=edit & id=' . $row['PRODUCT_CODE'] . '"><i class="fas fa-fw fa-th-list"></i> Details</a>
-                          </div> </td>';
-            echo '</tr> ';
-          }
-          ?>
+            echo '<td>' . $row['COMPANY_NAME'] . '</td>';
+            echo '<td>' . $row['UPLOADNAME'] . '</td>';
+      echo '<td align="right">
+            <a type="button" class="btn btn-primary bg-gradient-primary" href="inv_searchfrm.php?action=edit&id=' . $row['PRODUCT_CODE'] . '"><i class="fas fa-fw fa-th-list"></i> Details</a>
+        </div> </td>';
+      echo '</tr> ';
+    }
+    ?>
+  </tbody>
+</table>
 
-        </tbody>
-      </table>
     </div>
   </div>
 </div>
