@@ -1,6 +1,6 @@
 <?php
 include '../includes/connection.php';
-include '../includes/sidebar.php';
+include '../includes/middle_sidebar.php';
 ?><?php
 
   $query = 'SELECT ID, t.TYPE
