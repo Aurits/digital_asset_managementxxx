@@ -1,6 +1,6 @@
 <?php
-  require_once('session.php');
-  confirm_logged_in();
+require_once('session.php');
+confirm_logged_in();
 ?>
 
 <!DOCTYPE html>
@@ -8,33 +8,35 @@
 
 <head>
   <style type="text/css">
-  .topbar{
-	  background-color:#03002e;
-	  color:#fff;
-  }
-#overlay {
-  position: fixed;
-  display: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 2;
-  cursor: pointer;
-}
-#text{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 50px;
-  color: white;
-  transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-}
-</style>
+    .topbar {
+      background-color: #03002e;
+      color: #fff;
+    }
+
+    #overlay {
+      position: fixed;
+      display: none;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    #text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 50px;
+      color: white;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+  </style>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -58,7 +60,7 @@
 </head>
 
 <body id="page-top">
-          
+
   <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -71,12 +73,12 @@
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light topbar mb-4 static-top shadow">
 
-      <a class="sidebar-brand d-flex align-items-center justify-content-center"  style="text-decoration: none; font-size: 18px; font-weight: bold;" href="index.php">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wik"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">Digital Assets Management System</div>
-      </a>
+          <a class="sidebar-brand d-flex align-items-center justify-content-center" style="text-decoration: none; font-size: 18px; font-weight: bold;" href="index.php">
+            <div class="sidebar-brand-icon rotate-n-15">
+              <i class="fas fa-laugh-wik"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3">Digital Assets Management System</div>
+          </a>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -92,32 +94,31 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo  $_SESSION['FIRST_NAME']. ' '.$_SESSION['LAST_NAME'] ;?></span>
-                <img class="img-profile rounded-circle"
-                <?php
-                  if($_SESSION['GENDER']=='Male'){
-                    echo 'src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS0rikanm-OEchWDtCAWQ_s1hQq1nOlQUeJr242AdtgqcdEgm0Dg"';
-                  }else{
-                    echo 'src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNngF0RFPjyGl4ybo78-XYxxeap88Nvsyj1_txm6L4eheH8ZBu"';
-                  }
-                ?>>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo  $_SESSION['FIRST_NAME'] . ' ' . $_SESSION['LAST_NAME']; ?></span>
+                <img class="img-profile rounded-circle" <?php
+                                                        if ($_SESSION['GENDER'] == 'Male') {
+                                                          echo 'src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTS0rikanm-OEchWDtCAWQ_s1hQq1nOlQUeJr242AdtgqcdEgm0Dg"';
+                                                        } else {
+                                                          echo 'src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNngF0RFPjyGl4ybo78-XYxxeap88Nvsyj1_txm6L4eheH8ZBu"';
+                                                        }
+                                                        ?>>
 
               </a>
 
-              <?php 
+              <?php
 
-                $query = 'SELECT ID, FIRST_NAME,LAST_NAME,USERNAME,PASSWORD, t.TYPE
+              $query = 'SELECT ID, FIRST_NAME,LAST_NAME,USERNAME,PASSWORD, t.TYPE
                           FROM users u
                           JOIN employee e ON e.EMPLOYEE_ID=u.EMPLOYEE_ID
                           JOIN type t ON t.TYPE_ID=u.TYPE_ID';
-                $result = mysqli_query($db, $query) or die (mysqli_error($db));
-      
-                while ($row = mysqli_fetch_assoc($result)) {
-                          $a = $_SESSION['MEMBER_ID'];
-                          $bbb = $_SESSION['TYPE'];
-                }
-                          
-            ?>
+              $result = mysqli_query($db, $query) or die(mysqli_error($db));
+
+              while ($row = mysqli_fetch_assoc($result)) {
+                $a = $_SESSION['MEMBER_ID'];
+                $bbb = $_SESSION['TYPE'];
+              }
+
+              ?>
 
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -141,6 +142,6 @@
 
         </nav>
         <!-- End of Topbar -->
-          
+
         <!-- Begin Page Content -->
         <div class="container-fluid">

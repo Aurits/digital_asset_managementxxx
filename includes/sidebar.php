@@ -1,35 +1,36 @@
 <?php
-  require('session.php');
-  confirm_logged_in();
+require('session.php');
+confirm_logged_in();
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <style type="text/css">
-#overlay {
-  position: fixed;
-  display: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 2;
-  cursor: pointer;
-}
-#text{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 50px;
-  color: white;
-  transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-}
-</style>
+    #overlay {
+      position: fixed;
+      display: none;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 2;
+      cursor: pointer;
+    }
+
+    #text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 50px;
+      color: white;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+  </style>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -51,7 +52,7 @@
 </head>
 
 <body id="page-top">
-          
+
   <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -83,18 +84,18 @@
         Home
       </div>
       <!-- Tables Buttons -->
-	  <li class="nav-item">
+      <li class="nav-item">
         <a class="nav-link" href="product.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Digital Assets</span></a>
       </li>
-	  
-	     <li class="nav-item">
+
+      <li class="nav-item">
         <a class="nav-link" href="employee.php">
           <i class="fas fa-fw fa-user"></i>
           <span>Manage Staff</span></a>
       </li>
-	  
+
       <li class="nav-item">
         <a class="nav-link" href="customer.php">
           <i class="fas fa-fw fa-user"></i>
@@ -106,7 +107,7 @@
           <i class="fas fa-fw fa-archive"></i>
           <span>Manage Assets</span></a>
       </li>
-      
+
       <!--<li class="nav-item">
         <a class="nav-link" href="transaction.php">
           <i class="fas fa-fw fa-retweet"></i>
@@ -118,7 +119,7 @@
           <i class="fas fa-fw fa-cogs"></i>
           <span>Supplier</span></a>
       </li>-->
-      
+
       <li class="nav-item">
         <a class="nav-link" href="user.php">
           <i class="fas fa-fw fa-users"></i>

@@ -156,7 +156,7 @@ include '../includes/footer.php';
              <input type="number"  min="1" max="999999999" class="form-control" placeholder="On Hand" name="onhand" required>
            </div> -->
           <div class="form-group">
-            <input type="file"  class="form-control" placeholder="file" name="file" required>
+            <input type="file" class="form-control" placeholder="file" name="file" required>
           </div>
           <div class="form-group">
             <?php
