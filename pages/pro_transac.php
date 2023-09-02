@@ -68,4 +68,3 @@ if (isset($_FILES["fileToUpload"])) {
 }
 
 include '../includes/footer.php';
-?>
