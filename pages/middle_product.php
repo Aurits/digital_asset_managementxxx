@@ -66,6 +66,7 @@ $sup .= "</select>";
         </thead>
         <tbody>
 
+
           <?php
           error_reporting(E_ALL);
           ini_set('display_errors', 1);
@@ -95,16 +96,16 @@ $sup .= "</select>";
                               ... <span class="caret"></span></a>
                             <ul class="dropdown-menu text-center" role="menu">
                                 <li>
-                                  <a type="button" class="btn btn-warning bg-gradient-warning btn-block" style="border-radius: 0px;" href="pro_edit.php?action=edit & id=' . $row['PRODUCT_ID'] . '">
+                                  <a type="button" class="btn btn-warning bg-gradient-warning btn-block" style="border-radius: 0px;" href="middle_pro_edit.php?action=edit & id=' . $row['PRODUCT_ID'] . '">
                                     <i class="fas fa-fw fa-edit"></i> Update
                                   </a>
                                 </li>
 								
-								<li>
-                                  <a type="button" class="btn btn-info bg-gradient-info btn-block" style="border-radius: 0px;" href="pro_edit.php?action=edit & id=' . $row['PRODUCT_ID'] . '">
-                                    <i class="fas fa-fw fa-edit"></i> Download
-                                  </a>
-                                </li>
+								               <li>
+                <a href="uploads/' . $row['UPLOADNAME'] . '" class="btn btn-success bg-gradient-success btn-block" style="border-radius: 0px;" download>
+                <i class="fas fa-fw fa-download"></i> Download
+                </a>
+            </li>
 								
 								<li>
                                   <a type="button" class="btn btn-danger bg-gradient-danger btn-block" style="border-radius: 0px;" href="pro_del.php?id=' . $row['PRODUCT_ID'] . '">
@@ -139,7 +140,7 @@ include '../includes/footer.php';
         </button>
       </div>
       <div class="modal-body">
-        <form role="form" method="post" action="pro_transac.php?action=add">
+        <form role="form" method="post" action="pro_transac.php?action=add" enctype="multipart/form-data">
           <div class="form-group">
             <input class="form-control" placeholder="Asset Code" name="prodcode" required>
           </div>
@@ -155,8 +156,10 @@ include '../includes/footer.php';
           <!-- <div class="form-group">
              <input type="number"  min="1" max="999999999" class="form-control" placeholder="On Hand" name="onhand" required>
            </div> -->
+           <input type="hidden" name="uploadName" value="">
+
           <div class="form-group">
-            <input type="file" class="form-control" placeholder="file" name="file" required>
+            <input type="file" name="fileToUpload" id="fileToUpload" class="form-control" placeholder="file" required>
           </div>
           <div class="form-group">
             <?php

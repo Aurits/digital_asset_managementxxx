@@ -13,11 +13,11 @@ if (isset($_FILES["fileToUpload"])) {
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
     // Check if image file is a valid image
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if ($check === false) {
-        echo "File is not an image.";
-        $uploadOk = 0;
-    }
+    // $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+    // if ($check === false) {
+    //     echo "File is not an image.";
+    //     $uploadOk = 0;
+    // }
 
     // Check if file already exists
     if (file_exists($target_file)) {
@@ -60,7 +60,7 @@ if (isset($_FILES["fileToUpload"])) {
             mysqli_query($db, $query) or die('Error in updating product in Database ' . $query);
 
             // Redirect to the desired page
-            echo '<script>window.location = "product.php";</script>';
+            echo '<script>window.history.back();</script>';
         } else {
             echo "Sorry, there was an error uploading your file.";
         }

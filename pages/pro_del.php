@@ -18,7 +18,8 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 ?>
     <script type="text/javascript">
         alert("Asset Successfully Deleted.");
-        window.location = "product.php";
+       window.history.back();
+
     </script>
 <?php
 }

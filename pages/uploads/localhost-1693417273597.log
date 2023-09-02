@@ -1,0 +1,7 @@
+DevTools failed to load source map: Could not load content for chrome-extension://iidnbdjijdkbmajdffnidomddglmieko/sourceMap/detect-editors.js.map: System error: net::ERR_BLOCKED_BY_CLIENT
+DevTools failed to load source map: Could not load content for chrome-extension://iidnbdjijdkbmajdffnidomddglmieko/sourceMap/quillbot-content.js.map: System error: net::ERR_BLOCKED_BY_CLIENT
+index.php:247 Error: SyntaxError: Unexpected token 'a', "array(10) "... is not valid JSON
+(anonymous) @ index.php:247
+Promise.catch (async)
+submitForm @ index.php:246
+onclick @ index.php:66
